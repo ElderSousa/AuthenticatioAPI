@@ -1,0 +1,15 @@
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\bin\Debug\net8.0\MS-AuthenticationAutorization.Application.deps.json
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\bin\Debug\net8.0\MS-AuthenticationAutorization.Application.dll
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\bin\Debug\net8.0\MS-AuthenticationAutorization.Application.pdb
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\bin\Debug\net8.0\MS-AuthenticationAutorization.Domain.dll
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\bin\Debug\net8.0\MS-AuthenticationAutorization.Domain.pdb
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.csproj.AssemblyReference.cache
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.AssemblyInfoInputs.cache
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.AssemblyInfo.cs
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.csproj.CoreCompileInputs.cache
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-Authe.51698C23.Up2Date
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.dll
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\refint\MS-AuthenticationAutorization.Application.dll
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\MS-AuthenticationAutorization.Application.pdb
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Application.MS-AuthenticationAutorization\obj\Debug\net8.0\ref\MS-AuthenticationAutorization.Application.dll

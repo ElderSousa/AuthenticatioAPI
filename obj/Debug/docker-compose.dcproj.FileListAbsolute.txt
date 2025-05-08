@@ -1,0 +1,1 @@
+C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
