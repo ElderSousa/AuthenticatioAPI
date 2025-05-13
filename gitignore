@@ -1,68 +1,75 @@
+##################################
 # Build Results
-[Dd]ebug/
+#################################
+[Dd]ebug*/
 [Dd]ebugPublic/
 [Dd]ist/
-[Dd]ebug-net*/  # Exclude Debug builds for all platforms
 [Dd]ist/
+[Dd]ebug-net*/
 
-# User-specific files
-.idea/
+#################################
+# IDEs e Ferramentas
+#################################
+.vs/
 .vscode/
+.idea/
+
+#################################
+# Arquivos específicos do usuário
+#################################
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# User-specific files (Windows)
+#################################
+# Arquivos de build do .NET
+#################################
+**/bin/
+**/obj/
+artifacts/
+project.lock.json
+project.fragment.lock.json
+
+#################################
+# Scaffolding do ASP.NET
+#################################
+ScaffoldingReadMe.txt
+
+#################################
+# Banco de dados local / backups
+#################################
 *.dbmdl
 *.bak
 *.sql
 *.sqlite
 *.sqlite3
 
-# .NET Core
-project.lock.json
-project.fragment.lock.json
-artifacts/
+#################################
+# Configurações locais e sensíveis
+#################################
+appsettings.json
+appsettings.*.json
+local.settings.json
+secrets.json
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# Visual Studio for Mac
-.vscode/
-
-# NPM packages
+#################################
+# Instalação / pacotes
+#################################
 node_modules/
-
-# .NET Core Build folder
-**/bin/
-**/obj/
-
-# .NET Core - Local tools
 .local/
-
-# Azure Functions
-local.settings.json      # Ignorar arquivo de configurações locais (geralmente contém segredos)
-appsettings.json         # Ignorar arquivo de configurações do app (geralmente contém strings de conexão)
-appsettings.Development.json  # Ignorar configuração de desenvolvimento com dados sensíveis
-appsettings.Production.json   # Ignorar configuração de produção com dados sensíveis
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
 
-# JetBrains Rider
-.idea/
+#################################
+# Certificados e chaves
+#################################
+*.pfx
+*.pem
 
-# MacOS specific
+#################################
+# macOS
+#################################
 *.DS_Store
-
-# Sensível (Segredos de Banco de Dados, Chaves, Tokens, Certificados)
-secrets.json           # Arquivo de segredos específicos (exemplo)
-*.pfx                  # Arquivos de chave privada
-*.pem                  # Arquivos de certificado
-
-# Visual Studio
-.vs/
