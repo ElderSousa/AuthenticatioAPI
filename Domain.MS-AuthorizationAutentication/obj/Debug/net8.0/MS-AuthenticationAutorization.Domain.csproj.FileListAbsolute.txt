@@ -9,3 +9,15 @@ C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Domain.MS-Author
 C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\refint\MS-AuthenticationAutorization.Domain.dll
 C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.pdb
 C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\ref\MS-AuthenticationAutorization.Domain.dll
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\bin\Debug\net8.0\MS-AuthenticationAutorization.Domain.deps.json
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\bin\Debug\net8.0\MS-AuthenticationAutorization.Domain.dll
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\bin\Debug\net8.0\MS-AuthenticationAutorization.Domain.pdb
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.AssemblyInfoInputs.cache
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.AssemblyInfo.cs
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.csproj.CoreCompileInputs.cache
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.sourcelink.json
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.dll
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\refint\MS-AuthenticationAutorization.Domain.dll
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\MS-AuthenticationAutorization.Domain.pdb
+C:\MS-AuthenticatioAutorization\Domain.MS-AuthorizationAutentication\obj\Debug\net8.0\ref\MS-AuthenticationAutorization.Domain.dll

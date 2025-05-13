@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vkLf/MRbJLU=",
+  "dgSpecHash": "JSeoN1pBEzg=",
   "success": true,
-  "projectFilePath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
+  "projectFilePath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

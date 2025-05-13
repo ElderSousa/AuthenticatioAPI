@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj": {}
+    "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj": {}
   },
   "projects": {
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj": {
+    "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj",
+        "projectUniqueName": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj",
         "projectName": "MS-AuthenticationAutorization.Application",
-        "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj",
+        "projectPath": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\obj\\",
+        "outputPath": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
+              "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
               }
             }
           }
@@ -53,6 +53,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -73,14 +87,14 @@
         }
       }
     },
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj": {
+    "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj",
+        "projectUniqueName": "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj",
         "projectName": "MS-AuthenticationAutorization.CroosCutting",
-        "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj",
+        "projectPath": "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\obj\\",
+        "outputPath": "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -101,14 +115,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj"
+              "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj"
               },
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
+              "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
               },
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj"
+              "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj"
               }
             }
           }
@@ -174,14 +188,14 @@
         }
       }
     },
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
+    "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
+        "projectUniqueName": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
         "projectName": "MS-AuthenticationAutorization.Domain",
-        "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
+        "projectPath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\obj\\",
+        "outputPath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -239,14 +253,14 @@
         }
       }
     },
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj": {
+    "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj",
+        "projectUniqueName": "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj",
         "projectName": "MS-AuthenticationAutorization.Infrastructure",
-        "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj",
+        "projectPath": "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\obj\\",
+        "outputPath": "C:\\MS-AuthenticatioAutorization\\Infrastructure.MS-AuthenticationAutorization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -267,8 +281,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
+              "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\Domain.MS-AuthorizationAutentication\\MS-AuthenticationAutorization.Domain.csproj"
               }
             }
           }
@@ -324,14 +338,14 @@
         }
       }
     },
-    "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj": {
+    "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj",
+        "projectUniqueName": "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj",
         "projectName": "MS-AuthenticationAutorization.API",
-        "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj",
+        "projectPath": "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\obj\\",
+        "outputPath": "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -352,8 +366,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj": {
-                "projectPath": "C:\\Authentication&AuthorizarionAPI\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj"
+              "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj": {
+                "projectPath": "C:\\MS-AuthenticatioAutorization\\CroosCutting.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.CroosCutting.csproj"
               }
             }
           }
