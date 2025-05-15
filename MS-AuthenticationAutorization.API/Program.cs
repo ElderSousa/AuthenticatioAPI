@@ -38,6 +38,7 @@ builder.Services.AddSwaggerGen( opts =>
         Title = "MS-AuthenticatonAutorization",
         Description = "Autenticação e autorização de usúários"
     });
+
     var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     opts.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
 });

@@ -17,7 +17,7 @@ public class ExceptionMiddleware
         _logger = logger;
     }
 
-    public async void Invoke(HttpContext context)
+    public async Task Invoke(HttpContext context)
     {
         try
         {
@@ -25,7 +25,7 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            _logger.LogError(ex, "Erro no middleware de exceções ao processar a requisição: {Path}", context.Request.Path);
             await HandleExceptionAsync(context, ex);
         }    
     }
@@ -61,6 +61,4 @@ public class ExceptionMiddleware
         var jsonResponse = JsonSerializer.Serialize(response);
         await context.Response.WriteAsync(jsonResponse);
     }
-
-
 }

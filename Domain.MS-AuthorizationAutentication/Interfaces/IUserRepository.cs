@@ -9,4 +9,5 @@ public interface IUserRepository
     Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken);
     Task<bool> UpdateAsync(User user, CancellationToken cancellationToken);
     Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken);
+    Task<bool> UserExist(Guid id, CancellationToken cancellationToken); 
 }

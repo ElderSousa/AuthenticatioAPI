@@ -3,24 +3,24 @@
 public class BaseModel
 {
     public Guid Id { get; set; }
-    public Guid CriadoPor { get; set; }
-    public Guid ModificadoPor { get; set; }
-    public DateTime CriadoEm { get; set; }
-    public DateTime ModificadoEm { get; set; }
-    public DateTime ExcluidoEm { get; set; }
+    public Guid CreatedBy { get; set; }
+    public Guid ModifiedBy { get; set; }
+    public DateTime CreatedOn { get; set; }
+    public DateTime ModifiedOn { get; set; }
+    public DateTime DeletedOn { get; set; }
 
-    public void AdicionarBaseModel(Guid usuarioId, DateTime dataHora, bool cadastrar)
+    public void ApplyBaseModelFields(Guid userId, DateTime dateTime, bool register)
     {
-        if (cadastrar)
+        if (register)
         {
             Id = Guid.NewGuid();
-            CriadoPor = usuarioId;
-            CriadoEm = dataHora;
+            CreatedBy = userId;
+            CreatedOn = dateTime;
         }
         else
         {
-            ModificadoPor = usuarioId;
-            ModificadoEm = dataHora;
+            ModifiedBy = userId;
+            ModifiedOn = dateTime;
         }
 
     }

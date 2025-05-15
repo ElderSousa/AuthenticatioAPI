@@ -51,3 +51,7 @@ C:\MS-AuthenticatioAutorization\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resou
 C:\MS-AuthenticatioAutorization\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\MS-AuthenticatioAutorization\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\MS-AuthenticatioAutorization\obj\Debug\docker-c.35A3FFBA.Up2Date
+C:\MS-AuthenticatioAutorization\bin\Debug\MS-AuthenticationAutorization.Application.dll
+C:\MS-AuthenticatioAutorization\bin\Debug\FluentValidation.dll
+C:\MS-AuthenticatioAutorization\bin\Debug\MS-AuthenticationAutorization.API.xml
+C:\MS-AuthenticatioAutorization\bin\Debug\MS-AuthenticationAutorization.Application.pdb

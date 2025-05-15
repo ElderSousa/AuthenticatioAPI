@@ -27,13 +27,13 @@ public class AuthDbContext : DbContext
                 .HasMaxLength(150)
                 .IsRequired();
 
-            entity.Property(e => e.Ativo)
+            entity.Property(e => e.Active)
                 .IsRequired();
 
-            entity.Property(e => e.CriadoEm)
+            entity.Property(e => e.CreatedOn)
                 .IsRequired();
 
-            entity.Property(e => e.CriadoPor)
+            entity.Property(e => e.CreatedBy)
                 .IsRequired();
         });
 
@@ -50,10 +50,10 @@ public class AuthDbContext : DbContext
             entity.Property(e => e.Descricao)
                 .HasMaxLength(250);
 
-            entity.Property(e => e.CriadoEm)
+            entity.Property(e => e.CreatedOn)
                 .IsRequired();
 
-            entity.Property(e => e.CriadoPor)
+            entity.Property(e => e.CreatedBy)
                 .IsRequired();
         });
 

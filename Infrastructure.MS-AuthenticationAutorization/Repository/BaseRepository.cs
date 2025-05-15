@@ -40,4 +40,23 @@ public class BaseRepository<T> where T : class
             throw;
         }
     }
+
+    public async Task<bool> Exist(Guid id, string sql, CancellationToken cancellationToken = default)
+    {
+        using var connection = authDbContext.Database.GetDbConnection();
+
+        await connection.OpenAsync();
+
+        using var command = connection.CreateCommand();
+        command.CommandText = sql;
+
+        var parameter = command.CreateParameter();
+        parameter.ParameterName = "@Id";
+
+        parameter.Value = id;
+        command.Parameters.Add(parameter);
+
+        var result = await command.ExecuteScalarAsync(cancellationToken);
+        return Convert.ToInt32(result) > 0;
+    }
 }

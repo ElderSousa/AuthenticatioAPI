@@ -333,3 +333,5 @@ C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.pdb
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.genruntimeconfig.cache
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\ref\MS-AuthenticationAutorization.API.dll
+C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\bin\Debug\net8.0\MS-AuthenticationAutorization.API.xml
+C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.xml

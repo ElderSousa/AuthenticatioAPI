@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\MS-AuthenticatioAutorization\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|c:\\ms-authenticatioautorization\\application.ms-authenticationautorization\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|solutionrelative:application.ms-authenticationautorization\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9F91F6B-64C9-4749-8FA7-F19C735A8A92}|MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj|c:\\ms-authenticatioautorization\\ms-authenticationautorization.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F91F6B-64C9-4749-8FA7-F19C735A8A92}|MS-AuthenticationAutorization.API\\MS-AuthenticationAutorization.API.csproj|solutionrelative:ms-authenticationautorization.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|c:\\ms-authenticatioautorization\\application.ms-authenticationautorization\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|solutionrelative:application.ms-authenticationautorization\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|c:\\ms-authenticatioautorization\\application.ms-authenticationautorization\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2374CF0-4EAC-444D-8873-CE4B8760696C}|Application.MS-AuthenticationAutorization\\MS-AuthenticationAutorization.Application.csproj|solutionrelative:application.ms-authenticationautorization\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseService.cs",
-              "DocumentMoniker": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Services\\BaseService.cs",
-              "RelativeDocumentMoniker": "Application.MS-AuthenticationAutorization\\Services\\BaseService.cs",
-              "ToolTip": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Services\\BaseService.cs",
-              "RelativeToolTip": "Application.MS-AuthenticationAutorization\\Services\\BaseService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwD0AAABSAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application.MS-AuthenticationAutorization\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Application.MS-AuthenticationAutorization\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T12:51:56.407Z",
+              "WhenOpened": "2025-05-15T14:51:41.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Application.MS-AuthenticationAutorization\\Services\\UserService.cs",
+              "ToolTip": "C:\\MS-AuthenticatioAutorization\\Application.MS-AuthenticationAutorization\\Services\\UserService.cs",
+              "RelativeToolTip": "Application.MS-AuthenticationAutorization\\Services\\UserService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAArwDMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T14:34:10.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "MS-AuthenticationAutorization.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\MS-AuthenticatioAutorization\\MS-AuthenticationAutorization.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "MS-AuthenticationAutorization.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAASwDAAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T13:30:13.52Z",
               "EditorCaption": ""
             }
           ]

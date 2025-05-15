@@ -11,9 +11,9 @@ public class BaseService
 {
     private HttpContext? _context;
     protected ILogger<BaseService> logger;
-    public BaseService(HttpContext context, ILogger<BaseService> logger)
+    public BaseService(IHttpContextAccessor contextAccessor, ILogger<BaseService> logger)
     {
-        _context = context;
+        _context = contextAccessor.HttpContext;
         this.logger = logger;
     }
 
@@ -55,9 +55,9 @@ public class BaseService
         }    
     }
 
-    protected static DateTime DateNow() => DateTime.UtcNow.AddHours(-3);
+    protected static DateTime DateHourNow() => DateTime.UtcNow.AddHours(-3);
 
-    protected static Pagination<T> Page<T>(List<T> itens, int page, int pageSize)
+    protected static Pagination<T> Page<T>(IEnumerable<T> itens, int page, int pageSize)
     {
         var quantityOfPages = (int)Math.Ceiling((double)itens.Count() / pageSize);
 
