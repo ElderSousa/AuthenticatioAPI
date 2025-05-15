@@ -1,0 +1,24 @@
+﻿using Domain.MS_AuthorizationAutentication.Enums;
+
+namespace Application.MS_AuthenticationAutorization.Requests;
+
+public class UserRequest
+{
+    public class CreateUserRequest
+    {
+        public string? Email { get; set; }
+        public string? PasswordHash { get; set; }
+        public bool Ativo { get; set; }
+        public TypeUserRole typeUserRole { get; set; }
+    }
+
+    public class UpdateUserRequest
+    {
+        public Guid Id { get; set; }
+        public string? Email { get; set; }
+        public string? PasswordHash { get; set; }
+        public bool Ativo { get; set; }
+        public TypeUserRole typeUserRole { get; set; }
+    }
+
+}

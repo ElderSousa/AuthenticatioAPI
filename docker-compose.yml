@@ -1,0 +1,6 @@
+services:
+  ms-authenticationautorization.api:
+    image: ${DOCKER_REGISTRY-}msauthenticationautorizationapi
+    build:
+      context: .
+      dockerfile: MS-AuthenticationAutorization.API/Dockerfile

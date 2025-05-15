@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MS-AuthenticationAutorization.API</name>
+    </assembly>
+    <members>
+        <member name="T:MS_AuthenticationAutorization.API.Controllers.UserController">
+            <summary>
+            Controller responsável pela gestão dos usuários.
+            </summary>
+        </member>
+        <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.CreateAsync(Application.MS_AuthenticationAutorization.Requests.UserRequest.CreateUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Cria o usuário com os dados informados.
+            </summary>
+            <param name="userRequest">Objeto com os parâmtros necessários para criar o usuário.</param>
+            <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+            <returns>Retorna um resultado assíncrono</returns>
+        </member>
+        <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.GetAllAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Busca todos os usuários solicitados na requisição
+            </summary>
+            <param name="page">Número da página</param>
+            <param name="pageSize">Quantidade de itens na página</param>
+            <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+            <returns>Retorna uma lista de paginada de usuários.</returns>
+        </member>
+    </members>
+</doc>
