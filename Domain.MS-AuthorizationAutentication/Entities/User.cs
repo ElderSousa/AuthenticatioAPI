@@ -6,8 +6,8 @@ namespace Domain.MS_AuthorizationAutentication.Entities;
 
 public class User : BaseModel
 {
-    public string? Email { get; set; }
-    public string? PasswordHash { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string PasswordHash { get; set; } = string.Empty;
     public bool Active { get; set; }
     public TypeUserRole typeUserRole { get; set; }
 

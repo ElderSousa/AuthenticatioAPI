@@ -10,6 +10,6 @@ public class UserScript
                 users
             WHERE 
                 Id = @Id
-                AND ExcluidoEm IS NULL
+                AND DeletedOn IS NULL
         ";
 }

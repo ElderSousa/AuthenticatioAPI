@@ -19,15 +19,15 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    Nome = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
+                    Name = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Descricao = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
+                    Description = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CriadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    ModificadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    CriadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ModificadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ExcluidoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    ModifiedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,15 +42,15 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Email = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    PasswordHash = table.Column<string>(type: "longtext", nullable: true)
+                    PasswordHash = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Ativo = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Active = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     typeUserRole = table.Column<int>(type: "int", nullable: false),
-                    CriadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    ModificadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    CriadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ModificadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ExcluidoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    ModifiedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,11 +65,11 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     UserId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     RoleId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    CriadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    ModificadoPor = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    CriadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ModificadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ExcluidoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    ModifiedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {

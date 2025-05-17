@@ -1,14 +1,22 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using Asp.Versioning;
 using CroosCutting.MS_AuthenticationAutorization.IoC;
 using CroosCutting.MS_AuthenticationAutorization.Middleware;
 using Microsoft.OpenApi.Models;
+using CrossCutting.MS_AuthenticationAutorization.IoC;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+
+    });
 //Versionamento
 builder.Services.AddApiVersioning(v =>
 {
@@ -43,11 +51,14 @@ builder.Services.AddSwaggerGen( opts =>
     opts.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
 });
 
+builder.Services.AddCorsPolicy(builder.Environment);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseCors("Development");
     app.UseSwagger();
     app.UseSwaggerUI();
 }

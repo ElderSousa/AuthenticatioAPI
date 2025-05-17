@@ -1,75 +1,99 @@
 ##################################
-# Build Results
-#################################
-[Dd]ebug*/
-[Dd]ebugPublic/
-[Dd]ist/
-[Dd]ist/
-[Dd]ebug-net*/
+# Build do .NET
+##################################
+**/bin/
+**/obj/
+**/artifacts/
+project.lock.json
+project.fragment.lock.json
 
-#################################
-# IDEs e Ferramentas
-#################################
-.vs/
-.vscode/
-.idea/
-
-#################################
-# Arquivos específicos do usuário
-#################################
+##################################
+# Configurações do usuário
+##################################
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-#################################
-# Arquivos de build do .NET
-#################################
-**/bin/
-**/obj/
-artifacts/
-project.lock.json
-project.fragment.lock.json
-
-#################################
-# Scaffolding do ASP.NET
-#################################
-ScaffoldingReadMe.txt
-
-#################################
-# Banco de dados local / backups
-#################################
-*.dbmdl
-*.bak
-*.sql
-*.sqlite
-*.sqlite3
-
-#################################
+##################################
 # Configurações locais e sensíveis
-#################################
+##################################
 appsettings.json
 appsettings.*.json
 local.settings.json
 secrets.json
 
-#################################
-# Instalação / pacotes
-#################################
-node_modules/
-.local/
-*.cab
-*.msi
-*.msm
-*.msp
+##################################
+# Docker
+##################################
+docker-compose.override.yml
+*.dcproj
+*.dcproj.user
+.dockerignore
 
-#################################
-# Certificados e chaves
-#################################
-*.pfx
-*.pem
+##################################
+# Visual Studio
+##################################
+.vs/
+.vscode/
+*.launch.json
+*.vspscc
+*.vssscc
 
-#################################
-# macOS
-#################################
+##################################
+# IDEs
+##################################
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+##################################
+# Outros arquivos temporários
+##################################
+*.log
+*.tlog
+*.tmp
+*.bak
+*.swp
+*.swn
 *.DS_Store
+Thumbs.db
+
+##################################
+# Scaffolding do ASP.NET
+##################################
+ScaffoldingReadMe.txt
+
+##################################
+# Banco de dados local / backups
+##################################
+*.mdf
+*.ldf
+*.dbmdl
+*.sqlite
+*.sqlite3
+*.sql
+*.bak
+
+##################################
+# Pacotes
+##################################
+node_modules/
+packages/
+*.nupkg
+*.snupkg
+
+##################################
+# Certificados e chaves
+##################################
+*.pfx
+*.p12
+*.pem
+*.key
+*.cer
+
+##################################
+# Publish / Deploy
+##################################
+publish/
+*.Publish.xml

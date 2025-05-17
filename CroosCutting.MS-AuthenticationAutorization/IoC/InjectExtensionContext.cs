@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
 namespace CroosCutting.MS_AuthenticationAutorization.IoC;
 
 public static class InjectExtensionContext
@@ -8,7 +7,8 @@ public static class InjectExtensionContext
     {
         services.InjectRepository();
         services.InjectService();
-
+        services.AddHttpContextAccessor();
+        
         return services;
     }
 }

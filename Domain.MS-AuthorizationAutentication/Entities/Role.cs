@@ -5,8 +5,8 @@ namespace Domain.MS_AuthorizationAutentication.Entities;
 
 public class Role : BaseModel
 {
-    public string? Nome { get; set; }
-    public string? Descricao { get; set; }
+    public string? Name { get; set; }
+    public string? Description { get; set; }
 
     [NotMapped]
     public bool ValidationRegister { get; set; }
