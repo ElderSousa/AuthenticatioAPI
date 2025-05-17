@@ -44,10 +44,10 @@ public class AuthDbContext : DbContext
             entity.Property(e => e.Id)
                 .IsRequired();
 
-            entity.Property(e => e.Nome)
+            entity.Property(e => e.Name)
                 .HasMaxLength(250);
 
-            entity.Property(e => e.Descricao)
+            entity.Property(e => e.Description)
                 .HasMaxLength(250);
 
             entity.Property(e => e.CreatedOn)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MS-AuthenticationAutorization.CroosCutting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a382a6a1785115643fa32ba00a9972b0f9f37d8a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ecc764db736aa62562eb6c305402b19e3e2ec1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MS-AuthenticationAutorization.CroosCutting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MS-AuthenticationAutorization.CroosCutting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

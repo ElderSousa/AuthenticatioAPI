@@ -1,6 +1,4 @@
-﻿using Application.MS_AuthenticationAutorization.Requests;
-using Application.MS_AuthenticationAutorization.Responses;
-using Application.MS_AuthenticationAutorization.Services;
+﻿using Application.MS_AuthenticationAutorization.Responses;
 using Domain.MS_AuthorizationAutentication.Entities;
 using static Application.MS_AuthenticationAutorization.Requests.UserRequest;
 
@@ -14,7 +12,7 @@ public static class UserMappingExtension
         {
             Email = userRequest.Email,
             PasswordHash = userRequest.PasswordHash,
-            Active = userRequest.Ativo,
+            Active = userRequest.Active,
             typeUserRole = userRequest.typeUserRole
         };
     }
@@ -26,7 +24,7 @@ public static class UserMappingExtension
             Id = userRequest.Id,
             Email = userRequest.Email,
             PasswordHash = userRequest.PasswordHash,
-            Active = userRequest.Ativo,
+            Active = userRequest.Active,
             typeUserRole = userRequest.typeUserRole
         };
     }
@@ -38,12 +36,12 @@ public static class UserMappingExtension
             Id = user.Id,
             Email = user.Email,
             PasswordHash = user.PasswordHash,
-            Ativo = user.Active,
+            Active = user.Active,
             typeUserRole = user.typeUserRole,
-            CriadoEm = user.CreatedOn,
-            CriadoPor = user.CreatedBy,
-            ModificadoEm = user.ModifiedOn,
-            ModificadoPor = user.ModifiedBy
+            CreatedOn = user.CreatedOn,
+            CreatedBy = user.CreatedBy,
+            ModifiedOn = user.ModifiedOn,
+            ModifiedBy = user.ModifiedBy
         };
     }
 

@@ -15,7 +15,7 @@
             </summary>
             <param name="userRequest">Objeto com os parâmtros necessários para criar o usuário.</param>
             <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
-            <returns>Retorna um resultado assíncrono</returns>
+            <returns>Retorna um response com o status da requisição.</returns>
         </member>
         <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.GetAllAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
@@ -25,6 +25,30 @@
             <param name="pageSize">Quantidade de itens na página</param>
             <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
             <returns>Retorna uma lista de paginada de usuários.</returns>
+        </member>
+        <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.GetIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Busca o usuário pertencente ao Id informado.
+            </summary>
+            <param name="id">Parâmetro informado na requisição.</param>
+            <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+            <returns>Retorna o usuário solicitado na requisição.</returns>
+        </member>
+        <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.UpdateAsync(Application.MS_AuthenticationAutorization.Requests.UserRequest.UpdateUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Atualiza o usuário com os dados informados.
+            </summary>
+            <param name="userRequest">Parâmetro informado para atualização do usuário.</param>
+            <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+            <returns>Retorna um response com o status da requisição.</returns>
+        </member>
+        <member name="M:MS_AuthenticationAutorization.API.Controllers.UserController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Deleta o usuário do Id informado.
+            </summary>
+            <param name="id">Parâmetro informado para exclusão do usuário</param>
+            <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+            <returns>Retorna um response com o status da requisição.</returns>
         </member>
     </members>
 </doc>

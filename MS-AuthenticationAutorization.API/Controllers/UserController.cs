@@ -1,6 +1,5 @@
 ﻿using Application.MS_AuthenticationAutorization.Interfaces;
 using Application.MS_AuthenticationAutorization.PaginationModel;
-using Application.MS_AuthenticationAutorization.Requests;
 using Application.MS_AuthenticationAutorization.Responses;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
@@ -28,13 +27,13 @@ public class UserController : ControllerBase
     /// </summary>
     /// <param name="userRequest">Objeto com os parâmtros necessários para criar o usuário.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
-    /// <returns>Retorna um resultado assíncrono</returns>
+    /// <returns>Retorna um response com o status da requisição.</returns>
     [HttpPost]
     [ProducesResponseType(typeof(Response), 200)]
     [ProducesResponseType(typeof(Response), 400)]
     public async Task<IActionResult> CreateAsync(CreateUserRequest userRequest, CancellationToken cancellationToken)
     {
-        var user = await _userService.CreateAsync(userRequest, cancellationToken);
+        _response = await _userService.CreateAsync(userRequest, cancellationToken);
         return _response.Error ? BadRequest(_response) : Ok(_response);
     }
 
@@ -52,5 +51,53 @@ public class UserController : ControllerBase
     {
         var allUsers = await _userService.GetAllAsync(page, pageSize, cancellationToken);
         return !allUsers.Itens.Any() ? NoContent() : Ok(allUsers);
+    }
+
+    /// <summary>
+    /// Busca o usuário pertencente ao Id informado.
+    /// </summary>
+    /// <param name="id">Parâmetro informado na requisição.</param>
+    /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+    /// <returns>Retorna o usuário solicitado na requisição.</returns>
+    [HttpGet("{id}")]
+    [ProducesResponseType(typeof(UserResponse), 200)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var user = await _userService.GetIdAsync(id, cancellationToken);
+            return Ok(user);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
+    /// <summary>
+    /// Atualiza o usuário com os dados informados.
+    /// </summary>
+    /// <param name="userRequest">Parâmetro informado para atualização do usuário.</param>
+    /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+    /// <returns>Retorna um response com o status da requisição.</returns>
+    [HttpPut]
+    public async Task<IActionResult> UpdateAsync(UpdateUserRequest userRequest, CancellationToken cancellationToken)
+    {
+        _response = await _userService.UpdateAsync(userRequest, cancellationToken);
+        return _response.Error ? base.BadRequest(_response) : base.Ok(_response);
+    }
+
+    /// <summary>
+    /// Deleta o usuário do Id informado.
+    /// </summary>
+    /// <param name="id">Parâmetro informado para exclusão do usuário</param>
+    /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+    /// <returns>Retorna um response com o status da requisição.</returns>
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    {
+        _response = await _userService.DeleteAsync(id, cancellationToken);
+        return _response.Error ? BadRequest(_response) : Ok(_response);
     }
 }

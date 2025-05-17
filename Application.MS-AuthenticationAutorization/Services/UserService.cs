@@ -31,10 +31,13 @@ public class UserService : BaseService, IUserService
         {
             var user = UserMappingExtension.MapToUser(userRequest);
             user.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), true);
+            user.ValidationRegister = true;
 
             _response = await ExecuteValidationResponse(_userValidator, user);
             if (_response.Error)
                 throw new ArgumentException(_response.Status);
+
+            user.PasswordHash = GeneratePasswordHash(user.PasswordHash);
 
             if (!await _userRepository.CreateAsync(user, cancellationToken))
                 throw new InvalidOperationException("Falha ao criar usuário.");
@@ -74,7 +77,7 @@ public class UserService : BaseService, IUserService
         {
             var user = await _userRepository.GetIdAsync(id, cancellationToken);
             if (user == null)
-                throw new KeyNotFoundException($"Usuário com {id} não encontrado");
+                throw new KeyNotFoundException($"Usuário com Id: {id} não encontrado");
 
             return UserMappingExtension.MapToUserResponse(user);
         }
@@ -91,10 +94,13 @@ public class UserService : BaseService, IUserService
         {
             var user = UserMappingExtension.MapToUser(userRequest);
             user.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
+            user.ValidationRegister = false;
 
             _response = await ExecuteValidationResponse(_userValidator, user);
             if (_response.Error)
                 throw new ArgumentException(_response.Status);
+
+            user.PasswordHash = GeneratePasswordHash(userRequest.PasswordHash);
 
             if (!await _userRepository.UpdateAsync(user, cancellationToken))
                 throw new InvalidOperationException("Falha ao atualizar usuário.");
@@ -125,4 +131,8 @@ public class UserService : BaseService, IUserService
             throw;
         }
     }
+
+    #region METHODS PRIVATE
+    public string GeneratePasswordHash(string password) => BCrypt.Net.BCrypt.HashPassword(password);
+    #endregion
 }

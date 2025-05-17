@@ -1,8 +1,8 @@
-name: dockercompose11684597829670092553
+name: dockercompose15071464972577055938
 services:
   ms-authenticationautorization.api:
     build:
-      context: C:\Authentication&AuthorizarionAPI\MS-AuthenticatioAutorization
+      context: C:\MS-AuthenticatioAutorization
       dockerfile: MS-AuthenticationAutorization.API/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -45,4 +45,4 @@ services:
           create_host_path: true
 networks:
   default:
-    name: dockercompose11684597829670092553_default
+    name: dockercompose15071464972577055938_default

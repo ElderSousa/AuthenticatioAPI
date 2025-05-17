@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.MS_AuthenticationAutorization.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20250508123311_CreateTables")]
+    [Migration("20250516144451_CreateTables")]
     partial class CreateTables
     {
         /// <inheritdoc />
@@ -31,26 +31,26 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("CriadoPor")
+                    b.Property<Guid>("CreatedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Descricao")
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DeletedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
-                    b.Property<DateTime>("ExcluidoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("ModificadoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("ModificadoPor")
+                    b.Property<Guid>("ModifiedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Nome")
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
@@ -65,30 +65,31 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<bool>("Ativo")
+                    b.Property<bool>("Active")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("CriadoEm")
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<Guid>("CriadoPor")
-                        .HasColumnType("char(36)");
+                    b.Property<DateTime>("DeletedOn")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("varchar(150)");
 
-                    b.Property<DateTime>("ExcluidoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("ModificadoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("ModificadoPor")
+                    b.Property<Guid>("ModifiedBy")
                         .HasColumnType("char(36)");
 
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("PasswordHash")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("typeUserRole")
@@ -107,23 +108,23 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     b.Property<Guid>("RoleId")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("CriadoPor")
+                    b.Property<Guid>("CreatedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime>("ExcluidoEm")
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DeletedOn")
                         .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime>("ModificadoEm")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("ModificadoPor")
+                    b.Property<Guid>("ModifiedBy")
                         .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("UserId", "RoleId");
 
