@@ -6,8 +6,8 @@ public class BaseModel
     public Guid CreatedBy { get; set; }
     public Guid ModifiedBy { get; set; }
     public DateTime CreatedOn { get; set; }
-    public DateTime ModifiedOn { get; set; }
-    public DateTime DeletedOn { get; set; }
+    public DateTime? ModifiedOn { get; set; }
+    public DateTime? DeletedOn { get; set; }
 
     public void ApplyBaseModelFields(Guid userId, DateTime dateTime, bool register)
     {

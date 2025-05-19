@@ -325,9 +325,9 @@ C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.sourcelink.json
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\scopedcss\bundle\MS-AuthenticationAutorization.API.styles.css
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.build.json
+C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-Authe.58599CFB.Up2Date
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.dll
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\refint\MS-AuthenticationAutorization.API.dll
@@ -335,4 +335,4 @@ C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.pdb
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\MS-AuthenticationAutorization.API.genruntimeconfig.cache
 C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\ref\MS-AuthenticationAutorization.API.dll
-C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\MS-AuthenticatioAutorization\MS-AuthenticationAutorization.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

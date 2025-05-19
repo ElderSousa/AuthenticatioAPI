@@ -1,99 +1,74 @@
-##################################
-# Build do .NET
-##################################
+
+## Diretórios padrão de build
 **/bin/
 **/obj/
-**/artifacts/
-project.lock.json
-project.fragment.lock.json
 
-##################################
-# Configurações do usuário
-##################################
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-##################################
-# Configurações locais e sensíveis
-##################################
-appsettings.json
-appsettings.*.json
-local.settings.json
-secrets.json
-
-##################################
-# Docker
-##################################
-docker-compose.override.yml
-*.dcproj
-*.dcproj.user
-.dockerignore
-
-##################################
-# Visual Studio
-##################################
-.vs/
-.vscode/
-*.launch.json
-*.vspscc
-*.vssscc
-
-##################################
-# IDEs
-##################################
-.idea/
-*.sublime-workspace
-*.sublime-project
-
-##################################
-# Outros arquivos temporários
-##################################
+## Logs
 *.log
 *.tlog
+
+## VS Code
+.vscode/
+
+## Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Arquivos temporários
 *.tmp
+*.temp
+~$*
 *.bak
-*.swp
-*.swn
+
+## Arquivos de build intermediário
+*.dll
+*.pdb
+*.exe
+*.app
+*.cache
+*.csproj.user
+*.dbmdl
+
+## Pacotes
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+## Configurações do sistema
 *.DS_Store
 Thumbs.db
 
-##################################
-# Scaffolding do ASP.NET
-##################################
-ScaffoldingReadMe.txt
+## Docker
+docker-compose.override.yml
+**/Dockerfile.*
+**/docker-compose.*
 
-##################################
-# Banco de dados local / backups
-##################################
-*.mdf
-*.ldf
-*.dbmdl
-*.sqlite
-*.sqlite3
-*.sql
-*.bak
+## AppSettings locais (opcional ignorar os arquivos de dev)
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
 
-##################################
-# Pacotes
-##################################
-node_modules/
-packages/
-*.nupkg
-*.snupkg
+## Secrets
+secrets.json
 
-##################################
-# Certificados e chaves
-##################################
-*.pfx
-*.p12
-*.pem
-*.key
-*.cer
+## EF Core Migrations temporárias
+**/Migrations/*Designer.cs
+**/Migrations/*Snapshot.cs
 
-##################################
-# Publish / Deploy
-##################################
-publish/
-*.Publish.xml
+## Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Publish
+**/publish/
+**/wwwroot/
