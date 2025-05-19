@@ -2,6 +2,8 @@
 ## Diretórios padrão de build
 **/bin/
 **/obj/
+bin/
+obj/
 
 ## Logs
 *.log
@@ -16,6 +18,7 @@
 *.userosscache
 *.sln.docstates
 .vs/
+
 
 ## Rider
 .idea/
@@ -50,6 +53,7 @@ Thumbs.db
 docker-compose.override.yml
 **/Dockerfile.*
 **/docker-compose.*
+obj/Docker/
 
 ## AppSettings locais (opcional ignorar os arquivos de dev)
 appsettings.Development.json
