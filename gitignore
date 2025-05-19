@@ -76,3 +76,9 @@ TestResults/
 ## Publish
 **/publish/
 **/wwwroot/
+
+# Outros padrões recomendados para .NET
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
