@@ -38,3 +38,12 @@ bin/**/ru/
 bin/**/tr/
 bin/**/zh-Hans/
 bin/**/zh-Hant/
+
+# Ignorar diretórios de build temporários
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.cache
+*.log
