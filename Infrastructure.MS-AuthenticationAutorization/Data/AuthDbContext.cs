@@ -79,6 +79,8 @@ public class AuthDbContext : DbContext
 
         modelBuilder.Entity<UserRole>(entity =>
         {
+            entity.Ignore(ur => ur.Id);
+
             entity.HasKey(ur => new { ur.UserId, ur.RoleId });
 
             entity.HasOne(ur => ur.User)

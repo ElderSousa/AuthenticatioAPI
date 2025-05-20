@@ -10,5 +10,5 @@ public interface IUserService
     Task<UserResponse?> GetIdAsync(Guid id, CancellationToken cancellationToken);
     Task<Pagination<UserResponse>> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken);
     Task<Response> UpdateAsync(UpdateUserRequest userRequest, CancellationToken cancellationToken);
-    Task<Response> SoftDeleteAsync(Guid user, CancellationToken cancellationToken);
+    Task<Response> SoftDeleteAsync(Guid id, CancellationToken cancellationToken);
 }
