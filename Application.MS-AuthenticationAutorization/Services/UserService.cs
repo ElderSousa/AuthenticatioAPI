@@ -66,7 +66,7 @@ public class UserService : BaseService, IUserService
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Falha ao buscar Todos os usuários em GetAllAsync");
+            logger.LogError(ex, "Falha ao buscar todos os usuários em GetAllAsync");
             throw;
         }
     }
@@ -118,19 +118,21 @@ public class UserService : BaseService, IUserService
         try
         {
             var user = await _userRepository.GetIdAsync(id, cancellationToken);
-            if (user != null)
+            if (user == null)
+                throw new KeyNotFoundException($"Usuário com Id: {id} não encontrado");
+
             user.DeletedOn = DateTime.UtcNow;
-            user!.ModifiedOn = DateTime.UtcNow;
+            user.ModifiedOn = DateTime.UtcNow;
 
             if (!await _userRepository.SoftDeleteAsync(user, cancellationToken))
-                throw new InvalidOperationException($"Falha ao excluir usuário com {id}");
+                throw new InvalidOperationException($"Falha ao excluir usuário com Id: {id}");
 
             return ReturnResponseSuccess();
         }
         catch (Exception ex)
         {
 
-            logger.LogError(ex, "Falha ao excluir usuário com Id: {Id} DeleteAsync", id);
+            logger.LogError(ex, "Falha ao excluir a role com Id: {Id} DeleteAsync", id);
             throw;
         }
     }

@@ -64,10 +64,9 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                 {
                     UserId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     RoleId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     CreatedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     ModifiedBy = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     DeletedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },

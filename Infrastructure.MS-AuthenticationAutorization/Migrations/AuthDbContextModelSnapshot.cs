@@ -31,8 +31,7 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime?>("CreatedOn")
-                        .IsRequired()
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("DeletedOn")
@@ -69,8 +68,7 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime?>("CreatedOn")
-                        .IsRequired()
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("DeletedOn")
@@ -110,14 +108,11 @@ namespace Infrastructure.MS_AuthenticationAutorization.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime?>("CreatedOn")
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ModifiedBy")
                         .HasColumnType("char(36)");
