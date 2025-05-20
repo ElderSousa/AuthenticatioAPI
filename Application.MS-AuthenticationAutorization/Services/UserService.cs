@@ -113,7 +113,7 @@ public class UserService : BaseService, IUserService
             throw;
         }
     }
-    public async Task<Response> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<Response> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
     {
         try
         {

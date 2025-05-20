@@ -18,6 +18,8 @@ obj/
 *.userosscache
 *.sln.docstates
 .vs/
+bin/
+obj/
 
 
 ## Rider

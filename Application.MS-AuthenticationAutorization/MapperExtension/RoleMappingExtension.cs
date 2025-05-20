@@ -1,11 +1,12 @@
-﻿using Domain.MS_AuthorizationAutentication.Entities;
+﻿using Application.MS_AuthenticationAutorization.Responses;
+using Domain.MS_AuthorizationAutentication.Entities;
 using static Application.MS_AuthenticationAutorization.Requests.RoleRequest;
 
 namespace Application.MS_AuthenticationAutorization.MapperExtension;
 
 public static class RoleMappingExtension
 {
-    public static Role RoleToMap(this CreateRoleRequest createRoleRequest)
+    public static Role MapToRole(this CreateRoleRequest createRoleRequest)
     {
         return new Role
         {
@@ -14,7 +15,7 @@ public static class RoleMappingExtension
         };
     }
 
-    public static Role RoleToMap(this UpdateRoleRequest updateCreateRoleRequest)
+    public static Role MapToRole(this UpdateRoleRequest updateCreateRoleRequest)
     {
         return new Role
         {
@@ -24,13 +25,22 @@ public static class RoleMappingExtension
         };
     }
 
-    public static  RoleToMap(this UpdateRoleRequest updateCreateRoleRequest)
+    public static RoleResponse MapToRoleResponse(this Role role)
     {
-        return new Role
+        return new RoleResponse
         {
-            Id = updateCreateRoleRequest.Id,
-            Name = updateCreateRoleRequest.Name,
-            Description = updateCreateRoleRequest.Description,
+            Id = role.Id,
+            Name = role.Name,
+            Description = role.Description,
+            CreatedOn = role.CreatedOn,
+            CreatedBy = role.CreatedBy,
+            ModifiedOn = role.ModifiedOn,
+            ModifiedBy = role.ModifiedBy
         };
+    }
+
+    public static IEnumerable<RoleResponse> MapToRoleResponse(this IEnumerable<Role> roles)
+    {
+        return roles.Select(r => r.MapToRoleResponse());
     }
 }
