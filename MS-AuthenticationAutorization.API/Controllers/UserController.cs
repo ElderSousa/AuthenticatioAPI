@@ -95,9 +95,9 @@ public class UserController : ControllerBase
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna um response com o status da requisição.</returns>
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<IActionResult> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
     {
-        _response = await _userService.DeleteAsync(id, cancellationToken);
+        _response = await _userService.SoftDeleteAsync(id, cancellationToken);
         return _response.Error ? BadRequest(_response) : Ok(_response);
     }
 }

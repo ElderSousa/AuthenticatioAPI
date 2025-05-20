@@ -1,5 +1,6 @@
 ﻿using Infrastructure.MS_AuthenticationAutorization.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Infrastructure.MS_AuthenticationAutorization.Repository;
 
@@ -41,22 +42,8 @@ public class BaseRepository<T> where T : class
         }
     }
 
-    public async Task<bool> Exist(Guid id, string sql, CancellationToken cancellationToken = default)
+    public async Task<bool> ExistAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
     {
-        using var connection = authDbContext.Database.GetDbConnection();
-
-        await connection.OpenAsync();
-
-        using var command = connection.CreateCommand();
-        command.CommandText = sql;
-
-        var parameter = command.CreateParameter();
-        parameter.ParameterName = "@Id";
-
-        parameter.Value = id;
-        command.Parameters.Add(parameter);
-
-        var result = await command.ExecuteScalarAsync(cancellationToken);
-        return Convert.ToInt32(result) > 0;
+        return await _dbSet.AnyAsync(predicate, cancellationToken);
     }
 }

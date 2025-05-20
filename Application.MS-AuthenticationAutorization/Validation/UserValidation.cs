@@ -46,7 +46,7 @@ namespace Application.MS_AuthenticationAutorization.Validation
             When(u => !u.ValidationRegister, () =>
             {
                 RuleFor(u => u.Id)
-                    .MustAsync(userRepository.UserExist)
+                    .MustAsync(userRepository.UserExistAsync)
                     .WithMessage(ValidationMessage.NotFound);
 
                 RuleFor(u => u.ModifiedOn)

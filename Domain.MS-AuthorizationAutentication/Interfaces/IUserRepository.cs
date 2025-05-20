@@ -8,6 +8,6 @@ public interface IUserRepository
     Task<User?> GetIdAsync(Guid id, CancellationToken cancellationToken);
     Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken);
     Task<bool> UpdateAsync(User user, CancellationToken cancellationToken);
-    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken);
-    Task<bool> UserExist(Guid id, CancellationToken cancellationToken); 
+    Task<bool> SoftDeleteAsync(User user, CancellationToken cancellationToken);
+    Task<bool> UserExistAsync(Guid id, CancellationToken cancellationToken); 
 }

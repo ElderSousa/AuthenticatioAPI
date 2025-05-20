@@ -113,13 +113,16 @@ public class UserService : BaseService, IUserService
             throw;
         }
     }
-    public async Task<Response> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<Response> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
     {
         try
         {
-            await GetIdAsync(id, cancellationToken);
+            var user = await _userRepository.GetIdAsync(id, cancellationToken);
+            if (user != null)
+            user.DeletedOn = DateTime.UtcNow;
+            user!.ModifiedOn = DateTime.UtcNow;
 
-            if (!await _userRepository.DeleteAsync(id, cancellationToken))
+            if (!await _userRepository.SoftDeleteAsync(user, cancellationToken))
                 throw new InvalidOperationException($"Falha ao excluir usuário com {id}");
 
             return ReturnResponseSuccess();

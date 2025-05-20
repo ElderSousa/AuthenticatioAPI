@@ -31,10 +31,21 @@ public class AuthDbContext : DbContext
                 .IsRequired();
 
             entity.Property(e => e.CreatedOn)
-                .IsRequired();
+                .IsRequired()
+                .HasDefaultValue(null);
 
             entity.Property(e => e.CreatedBy)
-                .IsRequired();
+                .IsRequired()
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.ModifiedOn)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.ModifiedBy)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.DeletedOn)
+                .HasDefaultValue(null);
         });
 
         modelBuilder.Entity<Role>(entity => {
@@ -55,6 +66,15 @@ public class AuthDbContext : DbContext
 
             entity.Property(e => e.CreatedBy)
                 .IsRequired();
+
+            entity.Property(e => e.ModifiedOn)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.ModifiedBy)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.DeletedOn)
+                .HasDefaultValue(null);
         });
 
         modelBuilder.Entity<UserRole>(entity =>
@@ -68,6 +88,15 @@ public class AuthDbContext : DbContext
             entity.HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
+
+            entity.Property(e => e.ModifiedOn)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.ModifiedBy)
+                .HasDefaultValue(null);
+
+            entity.Property(e => e.DeletedOn)
+                .HasDefaultValue(null);
         });
                
     }
