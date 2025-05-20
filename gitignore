@@ -1,86 +1,43 @@
-
-## Diretórios padrão de build
-**/bin/
-**/obj/
-bin/
-obj/
-
-## Logs
-*.log
-*.tlog
-
-## VS Code
-.vscode/
-
-## Visual Studio
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+# Visual Studio cache e arquivos temporários
 .vs/
+
+# Build outputs
 bin/
 obj/
 
-
-## Rider
-.idea/
-*.sln.iml
-
-## Arquivos temporários
-*.tmp
-*.temp
-~$*
-*.bak
-
-## Arquivos de build intermediário
-*.dll
-*.pdb
-*.exe
-*.app
-*.cache
-*.csproj.user
-*.dbmdl
-
-## Pacotes
-*.nupkg
-*.snupkg
-packages/
-*.nuspec
-
-## Configurações do sistema
-*.DS_Store
-Thumbs.db
-
-## Docker
-docker-compose.override.yml
-**/Dockerfile.*
-**/docker-compose.*
+# Docker files temporários e caches
+docker-compose*.yml
+Dockerfile*
 obj/Docker/
 
-## AppSettings locais (opcional ignorar os arquivos de dev)
-appsettings.Development.json
-appsettings.Local.json
-appsettings.*.local.json
+# Logs
+*.log
 
-## Secrets
-secrets.json
+# Arquivos de debug, dlls e executáveis
+*.pdb
+*.dll
+*.exe
 
-## EF Core Migrations temporárias
-**/Migrations/*Designer.cs
-**/Migrations/*Snapshot.cs
-
-## Test results
-TestResults/
-*.trx
-*.coverage
-*.coveragexml
-
-## Publish
-**/publish/
-**/wwwroot/
-
-# Outros padrões recomendados para .NET
+# Arquivos específicos do Visual Studio
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
+
+# Pastas de recursos locais de linguagens (binários)
+bin/**/pt-BR/
+bin/**/de/
+bin/**/es/
+bin/**/fr/
+bin/**/it/
+bin/**/ja/
+bin/**/ko/
+bin/**/pl/
+bin/**/ru/
+bin/**/tr/
+bin/**/zh-Hans/
+bin/**/zh-Hant/
+
+# Se quiser ignorar tudo dentro dessas pastas
+bin/**/
+obj/**/
