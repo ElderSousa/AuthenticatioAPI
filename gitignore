@@ -13,7 +13,7 @@ obj/Docker/
 # Logs
 *.log
 
-# Arquivos de debug, dlls e executáveis
+# Arquivos de debug, dlls e executáveis (opcional - cuidado para não ignorar libs importantes)
 *.pdb
 *.dll
 *.exe
@@ -24,20 +24,17 @@ obj/Docker/
 *.userosscache
 *.sln.docstates
 
-# Pastas de recursos locais de linguagens (binários)
-bin/**/pt-BR/
-bin/**/de/
-bin/**/es/
-bin/**/fr/
-bin/**/it/
-bin/**/ja/
-bin/**/ko/
-bin/**/pl/
-bin/**/ru/
-bin/**/tr/
-bin/**/zh-Hans/
-bin/**/zh-Hant/
+# Pastas de recursos locais de linguagens (binários) - se quiser ignorar idiomas específicos na build
+bin/pt-BR/
+bin/de/
+bin/es/
+bin/fr/
+bin/it/
+bin/ja/
+bin/ko/
+bin/pl/
+bin/ru/
+bin/tr/
+bin/zh-Hans/
+bin/zh-Hant/
 
-# Se quiser ignorar tudo dentro dessas pastas
-bin/**/
-obj/**/
