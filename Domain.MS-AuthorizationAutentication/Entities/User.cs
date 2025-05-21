@@ -11,7 +11,5 @@ public class User : BaseModel
     public bool Active { get; set; }
     public TypeUserRole typeUserRole { get; set; }
 
-    [NotMapped]
-    public bool ValidationRegister { get; set; }
     public ICollection<UserRole> UserRoles { get; set; } = new HashSet<UserRole>();
 }

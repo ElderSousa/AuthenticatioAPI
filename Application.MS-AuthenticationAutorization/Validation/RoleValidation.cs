@@ -12,6 +12,12 @@ public class RoleValidation : AbstractValidator<Role>
             .NotEmpty()
             .WithMessage(ValidationMessage.requiredField);
 
+        RuleFor(r => r.Name)
+            .NotEmpty()
+            .WithMessage(ValidationMessage.requiredField)
+            .Length(3, 255)
+            .WithMessage(ValidationMessage.MinimumMaximumCharacters);
+
         RuleFor(r => r.Description)
             .NotEmpty()
             .WithMessage(ValidationMessage.requiredField)

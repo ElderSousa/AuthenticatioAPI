@@ -30,9 +30,8 @@ public class RoleService : BaseService, IRoleService
         {
             var role = roleRequest.MapToRole();
             role.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), true);
-            role.ValidationRegister = true;
 
-            _response = await ExecuteValidationResponse(_roleValidator, role);
+            _response = await ExecuteValidationResponseAsync(_roleValidator, role);
             if (_response.Error)
                 throw new ArgumentException(_response.Status);
 
@@ -90,9 +89,8 @@ public class RoleService : BaseService, IRoleService
         {
             var role = roleRequest.MapToRole();
             role.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
-            role.ValidationRegister = false;
-
-            _response = await ExecuteValidationResponse(_roleValidator, role);
+           
+            _response = await ExecuteValidationResponseAsync(_roleValidator, role);
             if (_response.Error)
                 throw new ArgumentException("Falha ao atualizar usuário.");
 
@@ -113,8 +111,8 @@ public class RoleService : BaseService, IRoleService
             if (role == null)
                 throw new KeyNotFoundException($"Role com Id: {id} não encontrado.");
 
-            role.ModifiedOn = DateTime.UtcNow;
-            role.DeletedOn = DateTime.UtcNow;
+            role.ModifiedOn = DateHourNow();
+            role.DeletedOn = DateHourNow();
 
             if (!await _roleRepositoy.SoftDeleteAsync(role, cancellationToken))
                 throw new InvalidOperationException($"Falha ao excluir role com Id: {id}");

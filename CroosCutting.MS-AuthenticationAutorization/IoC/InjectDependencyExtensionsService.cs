@@ -12,6 +12,9 @@ public static class InjectDependencyExtensionsService
     {
         services.AddScoped<IUserService, UserService>();
         services.AddValidatorsFromAssemblyContaining<UserValidation>();
+        services.AddScoped<IRoleService, RoleService>();
+        services.AddScoped<IUserRoleService, UserRoleService>();
+
         return services;
     }
 }

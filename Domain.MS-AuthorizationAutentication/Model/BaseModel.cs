@@ -1,4 +1,6 @@
-﻿namespace Domain.MS_AuthorizationAutentication.Model;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.MS_AuthorizationAutentication.Model;
 
 public class BaseModel
 {
@@ -9,6 +11,9 @@ public class BaseModel
     public DateTime? ModifiedOn { get; set; }
     public DateTime? DeletedOn { get; set; }
 
+    [NotMapped]
+    public bool ValidationRegister { get; set; }
+
     public void ApplyBaseModelFields(Guid userId, DateTime dateTime, bool register)
     {
         if (register)
@@ -16,11 +21,13 @@ public class BaseModel
             Id = Guid.NewGuid();
             CreatedBy = userId;
             CreatedOn = dateTime;
+            ValidationRegister = true;
         }
         else
         {
             ModifiedBy = userId;
             ModifiedOn = dateTime;
+            ValidationRegister = false;
         }
 
     }

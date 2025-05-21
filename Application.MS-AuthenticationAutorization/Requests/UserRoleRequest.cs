@@ -1,7 +1,4 @@
-﻿using Domain.MS_AuthorizationAutentication.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Application.MS_AuthenticationAutorization.Requests;
+﻿namespace Application.MS_AuthenticationAutorization.Requests;
 
 public class UserRoleRequest
 {
@@ -9,9 +6,6 @@ public class UserRoleRequest
     {
         public Guid UserId { get; set; }
         public Guid RoleId { get; set; }
-
-        [NotMapped]
-        public bool ValidationRegister { get; set; }
     }
 
     public class UpdateUserRoleRequest
@@ -20,7 +14,5 @@ public class UserRoleRequest
         public Guid UserId { get; set; }
         public Guid RoleId { get; set; }
 
-        [NotMapped]
-        public bool ValidationRegister { get; set; }
     }
 }

@@ -3,62 +3,59 @@ using Application.MS_AuthenticationAutorization.PaginationModel;
 using Application.MS_AuthenticationAutorization.Responses;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using static Application.MS_AuthenticationAutorization.Requests.UserRequest;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using static Application.MS_AuthenticationAutorization.Requests.RoleRequest;
 
 namespace MS_AuthenticationAutorization.API.Controllers;
-/// <summary>
-/// Controller responsável pela gestão dos usuários.
-/// </summary>
 [ApiController]
 [ApiVersion("1.0")]
-[Route("api/v{version:apiVersion}/[controller]")]
-public class UserController : ControllerBase
+[Route("api/v{version:apiversion}/[controller]")]
+public class RoleController : ControllerBase
 {
     private Response _response = new();
-    private readonly IUserService _userService;
-    public UserController(IUserService userService)
+    private readonly IRoleService _roleService;
+
+    public RoleController(IRoleService roleService)
     {
-        _userService = userService;
+        _roleService = roleService;
     }
 
     /// <summary>
-    /// Cria o usuário com os dados informados.
+    /// Cria a role com os dados informados.
     /// </summary>
-    /// <param name="userRequest">Objeto com os parâmetros necessários para criar o usuário.</param>
+    /// <param name="roleRequest">Objeto com os parâmetros necessários para criar a role.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna um response com o status da requisição.</returns>
     [HttpPost]
     [ProducesResponseType(typeof(Response), 200)]
     [ProducesResponseType(typeof(Response), 400)]
-    public async Task<IActionResult> CreateAsync(CreateUserRequest userRequest, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateAsync(CreateRoleRequest roleRequest, CancellationToken cancellationToken)
     {
-        _response = await _userService.CreateAsync(userRequest, cancellationToken);
+        _response = await _roleService.CreateAsync(roleRequest, cancellationToken);
         return _response.Error ? BadRequest(_response) : Ok(_response);
     }
 
     /// <summary>
-    /// Busca todos os usuários solicitados na requisição
+    /// Busca todos as roles solicitadas na requisição
     /// </summary>
     /// <param name="page">Número da página</param>
     /// <param name="pageSize">Quantidade de itens na página</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
-    /// <returns>Retorna uma lista de paginada de usuários.</returns>
+    /// <returns>Retorna uma lista de paginada de roles.</returns>
     [HttpGet]
     [ProducesResponseType(typeof(Pagination<UserResponse>), 200)]
     [ProducesResponseType(204)]
     public async Task<IActionResult> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken)
     {
-        var allUsers = await _userService.GetAllAsync(page, pageSize, cancellationToken);
-        return !allUsers.Itens.Any() ? NoContent() : Ok(allUsers);
+        var allRoles = await _roleService.GetAllAsync(page, pageSize, cancellationToken);
+        return !allRoles.Itens.Any() ? NoContent() : Ok(allRoles);
     }
 
     /// <summary>
-    /// Busca o usuário pertencente ao Id informado.
+    /// Busca a role pertencente ao Id informado.
     /// </summary>
     /// <param name="id">Parâmetro informado na requisição.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
-    /// <returns>Retorna o usuário solicitado na requisição.</returns>
+    /// <returns>Retorna a role solicitada na requisição.</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(UserResponse), 200)]
     [ProducesResponseType(404)]
@@ -66,8 +63,8 @@ public class UserController : ControllerBase
     {
         try
         {
-            var user = await _userService.GetIdAsync(id, cancellationToken);
-            return Ok(user);
+            var role = await _roleService.GetIdAsync(id, cancellationToken);
+            return Ok(role);
         }
         catch (KeyNotFoundException ex)
         {
@@ -76,28 +73,28 @@ public class UserController : ControllerBase
     }
 
     /// <summary>
-    /// Atualiza o usuário com os dados informados.
+    /// Atualiza a role com os dados informados.
     /// </summary>
-    /// <param name="userRequest">Parâmetro informado para atualização do usuário.</param>
+    /// <param name="roleRequest">Parâmetro informado para atualização da role.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna um response com o status da requisição.</returns>
     [HttpPut]
-    public async Task<IActionResult> UpdateAsync(UpdateUserRequest userRequest, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateAsync(UpdateRoleRequest roleRequest, CancellationToken cancellationToken)
     {
-        _response = await _userService.UpdateAsync(userRequest, cancellationToken);
+        _response = await _roleService.UpdateAsync(roleRequest, cancellationToken);
         return _response.Error ? base.BadRequest(_response) : base.Ok(_response);
     }
 
     /// <summary>
-    /// Deleta o usuário do Id informado.
+    /// Deleta a role do Id informado.
     /// </summary>
-    /// <param name="id">Parâmetro informado para exclusão do usuário</param>
+    /// <param name="id">Parâmetro informado para exclusão da role</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna um response com o status da requisição.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
     {
-        _response = await _userService.SoftDeleteAsync(id, cancellationToken);
+        _response = await _roleService.SoftDeleteAsync(id, cancellationToken);
         return _response.Error ? BadRequest(_response) : Ok(_response);
     }
 }

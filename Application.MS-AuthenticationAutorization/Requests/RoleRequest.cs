@@ -9,8 +9,6 @@ public class RoleRequest
         public string? Name { get; set; }
         public string? Description { get; set; }
 
-        [NotMapped]
-        public bool ValidationRegister { get; set; }
     }
 
     public class UpdateRoleRequest
@@ -19,7 +17,5 @@ public class RoleRequest
         public string? Name { get; set; }
         public string? Description { get; set; }
 
-        [NotMapped]
-        public bool ValidationRegister { get; set; }
     }
 }

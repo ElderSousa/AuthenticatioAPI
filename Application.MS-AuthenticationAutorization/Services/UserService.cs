@@ -31,9 +31,8 @@ public class UserService : BaseService, IUserService
         {
             var user = UserMappingExtension.MapToUser(userRequest);
             user.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), true);
-            user.ValidationRegister = true;
 
-            _response = await ExecuteValidationResponse(_userValidator, user);
+            _response = await ExecuteValidationResponseAsync(_userValidator, user);
             if (_response.Error)
                 throw new ArgumentException(_response.Status);
 
@@ -94,9 +93,8 @@ public class UserService : BaseService, IUserService
         {
             var user = UserMappingExtension.MapToUser(userRequest);
             user.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
-            user.ValidationRegister = false;
 
-            _response = await ExecuteValidationResponse(_userValidator, user);
+            _response = await ExecuteValidationResponseAsync(_userValidator, user);
             if (_response.Error)
                 throw new ArgumentException(_response.Status);
 
@@ -121,8 +119,8 @@ public class UserService : BaseService, IUserService
             if (user == null)
                 throw new KeyNotFoundException($"Usuário com Id: {id} não encontrado");
 
-            user.DeletedOn = DateTime.UtcNow;
-            user.ModifiedOn = DateTime.UtcNow;
+            user.DeletedOn = DateHourNow();
+            user.ModifiedOn = DateHourNow();
 
             if (!await _userRepository.SoftDeleteAsync(user, cancellationToken))
                 throw new InvalidOperationException($"Falha ao excluir usuário com Id: {id}");
