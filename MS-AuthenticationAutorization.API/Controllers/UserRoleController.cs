@@ -54,17 +54,18 @@ namespace MS_AuthenticationAutorization.API.Controllers
         /// <summary>
         /// Busca a userRole pertencente ao Id informado.
         /// </summary>
-        /// <param name="id">Parâmetro informado na requisição.</param>
+        /// <param name="userId">Parâmetro informado na requisição.</param>
+        /// <param name="roleId">Parâmetro informado na requisição.</param>
         /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
         /// <returns>Retorna a role solicitada na requisição.</returns>
-        [HttpGet("{id}")]
+        [HttpGet("{userId}/{roleId}")]
         [ProducesResponseType(typeof(UserResponse), 200)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> GetIdAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetIdAsync(Guid userId, Guid roleId, CancellationToken cancellationToken)
         {
             try
             {
-                var userRole = await _userRoleService.GetIdAsync(id, cancellationToken);
+                var userRole = await _userRoleService.GetIdAsync(userId, roleId, cancellationToken);
                 return Ok(userRole);
             }
             catch (KeyNotFoundException ex)
@@ -89,13 +90,14 @@ namespace MS_AuthenticationAutorization.API.Controllers
         /// <summary>
         /// Deleta a userRole do Id informado.
         /// </summary>
-        /// <param name="id">Parâmetro informado para exclusão da userRole</param>
+        /// <param name="userId">Parâmetro informado na requisição.</param>
+        /// <param name="roleId">Parâmetro informado na requisição.</param>
         /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
         /// <returns>Retorna um response com o status da requisição.</returns>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
+        [HttpDelete("{userId}/{roleId}")]
+        public async Task<IActionResult> SoftDeleteAsync(Guid userId, Guid roleId, CancellationToken cancellationToken)
         {
-            _response = await _userRoleService.SoftDeleteAsync(id, cancellationToken);
+            _response = await _userRoleService.SoftDeleteAsync(userId, roleId, cancellationToken);
             return _response.Error ? BadRequest(_response) : Ok(_response);
         }
     }

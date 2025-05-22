@@ -35,6 +35,7 @@ builder.Services.AddApiVersioning(v =>
 
 builder.Services.InjectDataBase(builder.Configuration);
 builder.Services.InjectDependency();
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -66,6 +67,8 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseAuthorization();
 
 app.UseAuthorization();
 

@@ -56,17 +56,39 @@ public class UserController : ControllerBase
     /// <summary>
     /// Busca o usuário pertencente ao Id informado.
     /// </summary>
-    /// <param name="id">Parâmetro informado na requisição.</param>
+    /// <param name="email">Parâmetro informado na requisição.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna o usuário solicitado na requisição.</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(UserResponse), 200)]
     [ProducesResponseType(404)]
-    public async Task<IActionResult> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetIdAsync(Guid email, CancellationToken cancellationToken)
     {
         try
         {
-            var user = await _userService.GetIdAsync(id, cancellationToken);
+            var user = await _userService.GetIdAsync(email, cancellationToken);
+            return Ok(user);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
+    /// <summary>
+    /// Busca o usuário pertencente ao email informado.
+    /// </summary>
+    /// <param name="email">Parâmetro informado na requisição.</param>
+    /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+    /// <returns>Retorna o usuário solicitado na requisição.</returns>
+    [HttpGet("email/{email}")]
+    [ProducesResponseType(typeof(UserResponse), 200)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> GetByEmaildAsync(string email, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var user = await _userService.GetByEmailAsync(email, cancellationToken);
             return Ok(user);
         }
         catch (KeyNotFoundException ex)
