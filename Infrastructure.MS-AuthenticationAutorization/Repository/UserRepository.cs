@@ -29,10 +29,29 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             .FirstOrDefaultAsync(u => u.Id == id && u.DeletedOn == null, cancellationToken);
     }
 
+    public Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken)
+    {
+        return authDbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Email == email && u.DeletedOn == null);
+    }
+
+    public async Task<IEnumerable<Role>> GetRolesAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        return await authDbContext.UserRoles
+            .AsNoTracking()
+           
+            .Include(ur => ur.Role)
+            .Where(ur => ur.UserId == userId && ur.DeletedOn == null && ur.Role.DeletedOn == null && ur.User.DeletedOn == null)
+            .Select(ur => ur.Role)
+            .ToListAsync(cancellationToken);
+    }
+
     public async Task<bool> UpdateAsync(User user, CancellationToken cancellationToken)
     {
         return await GenericUpdateAsync(user, cancellationToken);
     }
+
     public async Task<bool> SoftDeleteAsync(User user, CancellationToken cancellationToken)
     {
         return await GenericUpdateAsync(user, cancellationToken);
@@ -42,4 +61,10 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         return await ExistAsync(u => u.Id == id && u.DeletedOn == null, cancellationToken);
     }
+
+    public async Task<bool> EmailExistAsync(string email, CancellationToken cancellationToken)
+    {
+        return await ExistAsync(u => u.Email == email && u.DeletedOn == null, cancellationToken);
+    }
+
 }

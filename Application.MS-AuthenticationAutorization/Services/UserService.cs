@@ -70,7 +70,7 @@ public class UserService : BaseService, IUserService
         }
     }
 
-    public async Task<UserResponse?> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<UserResponse> GetIdAsync(Guid id, CancellationToken cancellationToken)
     {
         try
         {
@@ -86,12 +86,45 @@ public class UserService : BaseService, IUserService
             throw;
         }
     }
+    public async Task<UserResponse> GetByEmailAsync(string email, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var user = await _userRepository.GetByEmailAsync(email, cancellationToken);
+            if (user == null)
+                throw new KeyNotFoundException($"Usuário com Email: {email} não encontrado");
 
+            return UserMappingExtension.MapToUserResponse(user);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Falha ao buscar usuário com Email: {Email} GetByEmailAsync", email);
+            throw;
+        }
+    }
+    public async Task<Pagination<RoleResponse>> GetRolesAsync(Guid userId, int page, int pageSize, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var allRoles = RoleMappingExtension.MapToRoleResponse(await _userRepository.GetRolesAsync(userId, cancellationToken));
+
+            var pagination = Page(allRoles, page, pageSize);
+            if (pagination == null)
+                throw new ArgumentException("Falha ao paginar roles.");
+
+            return pagination;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Falha ao buscar role com UserId: {UserId} GetRoleAsync", userId);
+            throw;
+        }
+    }
     public async Task<Response> UpdateAsync(UpdateUserRequest userRequest, CancellationToken cancellationToken)
     {
         try
         {
-            var user = UserMappingExtension.MapToUser(userRequest);
+            var user = UserMappingExtension.MapToUser(userRequest, await GetIdAsync(userRequest.Id, cancellationToken));
             user.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
 
             _response = await ExecuteValidationResponseAsync(_userValidator, user);
@@ -137,5 +170,6 @@ public class UserService : BaseService, IUserService
 
     #region METHODS PRIVATE
     public string GeneratePasswordHash(string password) => BCrypt.Net.BCrypt.HashPassword(password);
+
     #endregion
 }

@@ -16,12 +16,14 @@ public static class UserRoleMappingExtension
         };
     }
 
-    public static UserRole MapToUseRole(this UpdateUserRoleRequest updateUserRoleRequest)
+    public static UserRole MapToUseRole(this UpdateUserRoleRequest updateUserRoleRequest, UserRoleResponse userRoleResponse)
     {
         return new UserRole
         {
             UserId = updateUserRoleRequest.UserId,
             RoleId = updateUserRoleRequest.RoleId,
+            CreatedOn = userRoleResponse.CreatedOn,
+            CreatedBy = userRoleResponse.CreatedBy
         };
     }
 

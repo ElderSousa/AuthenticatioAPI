@@ -67,19 +67,19 @@ public class UserRoleService : BaseService, IUserRoleService
         }
     }
 
-    public async Task<UserRoleResponse?> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<UserRoleResponse> GetIdAsync(Guid userId, Guid roleId, CancellationToken cancellationToken)
     {
         try
         {
-            var userRole = await _userRoleRepository.GetIdAsync(id, cancellationToken);
+            var userRole = await _userRoleRepository.GetIdAsync(userId, roleId, cancellationToken);
             if (userRole == null)
-                throw new KeyNotFoundException($"UserRole com Id: {id} não encontrado");
+                throw new KeyNotFoundException($"UserRole com UserId: {userId} e RoleId: {roleId} não encontrado");
 
             return userRole.MapToUseRoleResponse();
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Falha ao buscar role com Id: {Id} GetIdAsync", id);
+            logger.LogError(ex, "Falha ao buscar role com UserId: {userId} e RoleId: {roleId} GetIdAsync", userId, roleId);
             throw;
         }
     }
@@ -88,7 +88,7 @@ public class UserRoleService : BaseService, IUserRoleService
     {
         try
         {
-            var userRole = userRoleRequest.MapToUseRole();
+            var userRole = UserRoleMappingExtension.MapToUseRole(userRoleRequest, await GetIdAsync(userRoleRequest.Id, userRoleRequest.RoleId, cancellationToken));
             userRole.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
 
             _response = await ExecuteValidationResponseAsync(_userRoleValidator, userRole);
@@ -99,7 +99,7 @@ public class UserRoleService : BaseService, IUserRoleService
                 throw new InvalidOperationException("Falha ao atualizar userRole.");
 
             return ReturnResponseSuccess();
-        }
+        } 
         catch (Exception ex)
         {
             logger.LogError(ex, "Falha ao atualizar usuário: {Id}.", userRoleRequest.Id);
@@ -107,25 +107,25 @@ public class UserRoleService : BaseService, IUserRoleService
         }
     }
 
-    public async Task<Response> SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<Response> SoftDeleteAsync(Guid userId, Guid roleId, CancellationToken cancellationToken)
     {
         try
         {
-            var userRole = await _userRoleRepository.GetIdAsync(id, cancellationToken);
+            var userRole = await _userRoleRepository.GetIdAsync(userId, roleId, cancellationToken);
             if (userRole == null)
-                throw new KeyNotFoundException($"UserRole com Id: {id} não encontrado");
+                throw new KeyNotFoundException($"UserRole com UserId: {userId} e RoleId: {roleId} não encontrado");
 
             userRole.ModifiedOn = DateHourNow();
             userRole.DeletedOn = DateHourNow();
 
             if (!await _userRoleRepository.SoftDeleteAsync(userRole, cancellationToken))
-                throw new InvalidOperationException($"Falha ao excluir role com Id: {id}");
+                throw new InvalidOperationException($"Falha ao excluir role com UserId: {userId} e RoleId: {roleId}");
 
             return ReturnResponseSuccess();        
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Falha ao excluir role com Id: {Id} DeleteAsync", id);
+            logger.LogError(ex, "Falha ao excluir role com UserId: {userId} e RoleId: {roleId} GetIdAsync", userId, roleId);
             throw; ;
         }
     }

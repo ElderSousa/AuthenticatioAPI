@@ -44,7 +44,7 @@ public class UserController : ControllerBase
     /// <param name="pageSize">Quantidade de itens na página</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna uma lista de paginada de usuários.</returns>
-    [HttpGet]
+    [HttpGet("{page}/{pageSize}")]
     [ProducesResponseType(typeof(Pagination<UserResponse>), 200)]
     [ProducesResponseType(204)]
     public async Task<IActionResult> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken)
@@ -56,17 +56,17 @@ public class UserController : ControllerBase
     /// <summary>
     /// Busca o usuário pertencente ao Id informado.
     /// </summary>
-    /// <param name="email">Parâmetro informado na requisição.</param>
+    /// <param name="id">Parâmetro informado na requisição.</param>
     /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
     /// <returns>Retorna o usuário solicitado na requisição.</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(UserResponse), 200)]
     [ProducesResponseType(404)]
-    public async Task<IActionResult> GetIdAsync(Guid email, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetIdAsync(Guid id, CancellationToken cancellationToken)
     {
         try
         {
-            var user = await _userService.GetIdAsync(email, cancellationToken);
+            var user = await _userService.GetIdAsync(id, cancellationToken);
             return Ok(user);
         }
         catch (KeyNotFoundException ex)
@@ -95,6 +95,23 @@ public class UserController : ControllerBase
         {
             return NotFound(ex.Message);
         }
+    }
+
+    /// <summary>
+    /// Busca todas as roles que pertencem ao usuário
+    /// </summary>
+    /// <param name="userId">Parâmetro informado na requisição.</param>
+    /// <param name="page">Número da página</param>
+    /// <param name="pageSize">Quantidade de itens na página</param>
+    /// <param name="cancellationToken">Token para cancelamento da operação assíncrona.</param>
+    /// <returns>Retorna uma lista de paginada de roles pertencente ao usuário.</returns>
+    [HttpGet("role/{userId}/{page}/{pageSize}")]
+    [ProducesResponseType(typeof(Pagination<UserResponse>), 200)]
+    [ProducesResponseType(204)]
+    public async Task<IActionResult> GetRoleAsync(Guid userId, int page, int pageSize, CancellationToken cancellationToken)
+    {
+         var allRoles = await _userService.GetRolesAsync(userId, page, pageSize, cancellationToken);
+        return !allRoles.Itens.Any() ? NoContent() : Ok(allRoles);
     }
 
     /// <summary>

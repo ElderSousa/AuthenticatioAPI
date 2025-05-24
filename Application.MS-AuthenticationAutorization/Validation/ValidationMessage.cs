@@ -10,4 +10,6 @@ public static class ValidationMessage
         "Formato do email invalído.";
     public static string MinimumMaximumCharacters =
         "O nome deve ter entre 3 e 255 caracteres.";
+    public static string EmailRegister =
+        "Email já cadastrado em nossa base de dados.";
 }

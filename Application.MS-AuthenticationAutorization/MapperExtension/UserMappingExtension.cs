@@ -13,11 +13,10 @@ public static class UserMappingExtension
             Email = userRequest.Email,
             PasswordHash = userRequest.PasswordHash,
             Active = userRequest.Active,
-            typeUserRole = userRequest.typeUserRole
         };
     }
 
-    public static User MapToUser(this UpdateUserRequest userRequest)
+    public static User MapToUser(this UpdateUserRequest userRequest, UserResponse userResponse)
     {
         return new User
         {
@@ -25,7 +24,23 @@ public static class UserMappingExtension
             Email = userRequest.Email,
             PasswordHash = userRequest.PasswordHash,
             Active = userRequest.Active,
-            typeUserRole = userRequest.typeUserRole
+            CreatedOn = userResponse.CreatedOn,
+            CreatedBy = userResponse.CreatedBy
+        };
+    }
+
+    public static User MapToUser(this UserResponse userResponse)
+    {
+        return new User
+        {
+            Id = userResponse.Id,
+            Email = userResponse.Email,
+            PasswordHash = userResponse.PasswordHash,
+            Active = userResponse.Active,
+            CreatedOn = userResponse.CreatedOn,
+            CreatedBy = userResponse.CreatedBy,
+            ModifiedOn = userResponse.ModifiedOn,
+            ModifiedBy = userResponse.ModifiedBy
         };
     }
 
@@ -37,7 +52,6 @@ public static class UserMappingExtension
             Email = user.Email,
             PasswordHash = user.PasswordHash,
             Active = user.Active,
-            typeUserRole = user.typeUserRole,
             CreatedOn = user.CreatedOn,
             CreatedBy = user.CreatedBy,
             ModifiedOn = user.ModifiedOn,

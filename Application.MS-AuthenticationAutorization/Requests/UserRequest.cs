@@ -1,6 +1,4 @@
-﻿using Domain.MS_AuthorizationAutentication.Enums;
-
-namespace Application.MS_AuthenticationAutorization.Requests;
+﻿namespace Application.MS_AuthenticationAutorization.Requests;
 
 public class UserRequest
 {
@@ -9,7 +7,6 @@ public class UserRequest
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public bool Active { get; set; }
-        public TypeUserRole typeUserRole { get; set; }
     }
 
     public class UpdateUserRequest
@@ -18,7 +15,6 @@ public class UserRequest
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public bool Active { get; set; }
-        public TypeUserRole typeUserRole { get; set; }
     }
 
 }

@@ -22,11 +22,10 @@ public class UserRoleRepository : BaseRepository<UserRole>, IUserRoleRepository
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<UserRole> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<UserRole> GetIdAsync(Guid userId, Guid roleId, CancellationToken cancellationToken)
     {
         return await authDbContext.UserRoles
-            .AsNoTracking()
-            .FirstAsync(ur => ur.Id == id && ur.DeletedOn == null, cancellationToken);
+            .FirstAsync(ur => ur.UserId == userId && ur.RoleId == roleId && ur.DeletedOn == null, cancellationToken);
     }
 
     public async Task<bool> UpdateAsync(UserRole userRole, CancellationToken cancellationToken)
@@ -36,7 +35,7 @@ public class UserRoleRepository : BaseRepository<UserRole>, IUserRoleRepository
 
     public async Task<bool> SoftDeleteAsync(UserRole userRole, CancellationToken cancellationToken)
     {
-        return await GenericUpdateAsync(userRole, cancellationToken);
+        return await GenericUpdatecompositekeyAsync(userRole, cancellationToken);
     }
 
     public async Task<bool> UserExistAsync(Guid id, CancellationToken cancellationToken)

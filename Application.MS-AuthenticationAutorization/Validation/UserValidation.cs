@@ -16,7 +16,13 @@ namespace Application.MS_AuthenticationAutorization.Validation
                 .NotEmpty()
                 .WithMessage(ValidationMessage.requiredField)
                 .EmailAddress()
-                .WithMessage(ValidationMessage.InvalidEmail);
+                .WithMessage(ValidationMessage.InvalidEmail)
+                .MustAsync(async (email, cancellationToken) =>
+                {
+                    var exist = await userRepository.EmailExistAsync(email, cancellationToken);
+                    return !exist;
+                })
+                .WithMessage(ValidationMessage.EmailRegister);
 
             RuleFor(u => u.PasswordHash)
                 .NotEmpty()
@@ -27,10 +33,6 @@ namespace Application.MS_AuthenticationAutorization.Validation
                 .Matches(@"[a-z]").WithMessage("A senha deve conter pelo menos uma letra minúscula.")
                 .Matches(@"\d").WithMessage("A senha deve conter pelo menos um número.")
                 .Matches(@"[^\da-zA-Z]").WithMessage("A senha deve conter pelo menos um caractere especial.");
-
-            RuleFor(u => u.typeUserRole)
-                .IsInEnum()
-                .WithMessage(ValidationMessage.requiredField);
 
             When(u => u.ValidationRegister, () =>
             {

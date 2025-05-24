@@ -47,12 +47,13 @@ public class ExceptionMiddleware
             _ => StatusCodes.Status500InternalServerError                    // 500 - Erro inesperado
         };
 
+        var isDev = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
 
         var response = new
         {
             status = statusCode,
-            message = ex.Message,
-            innerMessage = ex.InnerException?.Message,
+            message = isDev ? ex.Message : "Ocorreu um erro ao processar sua solicitação.",
+            innerMessage = isDev ? ex.InnerException?.Message : null,
             errorType = ex.GetType().Name
         };
 

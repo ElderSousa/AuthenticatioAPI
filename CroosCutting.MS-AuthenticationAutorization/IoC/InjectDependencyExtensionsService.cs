@@ -14,6 +14,8 @@ public static class InjectDependencyExtensionsService
         services.AddValidatorsFromAssemblyContaining<UserValidation>();
         services.AddScoped<IRoleService, RoleService>();
         services.AddScoped<IUserRoleService, UserRoleService>();
+        services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<ITokenService, TokenService>();
 
         return services;
     }

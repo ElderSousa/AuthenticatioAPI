@@ -1,5 +1,6 @@
 ﻿using Application.MS_AuthenticationAutorization.Responses;
 using Domain.MS_AuthorizationAutentication.Entities;
+using System.Data;
 using static Application.MS_AuthenticationAutorization.Requests.RoleRequest;
 
 namespace Application.MS_AuthenticationAutorization.MapperExtension;
@@ -15,13 +16,15 @@ public static class RoleMappingExtension
         };
     }
 
-    public static Role MapToRole(this UpdateRoleRequest updateCreateRoleRequest)
+    public static Role MapToRole(this UpdateRoleRequest updateRoleRequest, RoleResponse roleResponse)
     {
         return new Role
         {
-            Id = updateCreateRoleRequest.Id,
-            Name = updateCreateRoleRequest.Name,
-            Description = updateCreateRoleRequest.Description,
+            Id = updateRoleRequest.Id,
+            Name = updateRoleRequest.Name,
+            Description = updateRoleRequest.Description,
+            CreatedOn = roleResponse.CreatedOn,
+            CreatedBy = roleResponse.CreatedBy
         };
     }
 

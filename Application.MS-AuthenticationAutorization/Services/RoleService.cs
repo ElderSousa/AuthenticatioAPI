@@ -66,7 +66,7 @@ public class RoleService : BaseService, IRoleService
         }
     }
 
-    public async Task<RoleResponse?> GetIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<RoleResponse> GetIdAsync(Guid id, CancellationToken cancellationToken)
     {
         try
         {
@@ -87,18 +87,21 @@ public class RoleService : BaseService, IRoleService
     {
         try
         {
-            var role = roleRequest.MapToRole();
+            var role = RoleMappingExtension.MapToRole(roleRequest, await GetIdAsync(roleRequest.Id, cancellationToken));
             role.ApplyBaseModelFields(GetUserLogged(), DateHourNow(), false);
            
             _response = await ExecuteValidationResponseAsync(_roleValidator, role);
             if (_response.Error)
-                throw new ArgumentException("Falha ao atualizar usuário.");
+                throw new ArgumentException(_response.Status);
+
+            if (!await _roleRepositoy.UpdateAsync(role, cancellationToken))
+                throw new InvalidOperationException("Falha ao atualizar role");
 
             return ReturnResponseSuccess();
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Falha ao atualizar usuário: {Id}.", roleRequest.Id);
+            logger.LogError(ex, "Falha ao atualizar role: {Id}.", roleRequest.Id);
             throw;
         }
     }
